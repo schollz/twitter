@@ -1,4 +1,13 @@
-# twitter
+# Names
+
+- Twitterverse
+- Twittersphere
+- Social Sphere
+- Social Suggestions
+- Whats Trending
+- What's hot
+
+Book, Video, Muscian, Track suggestions from social media and trending websites
 
 Contains up-to-date pages for the dessemination of Twitterverse data.
 
