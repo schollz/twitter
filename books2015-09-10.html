@@ -2639,7 +2639,7 @@ a.anchor {
             var linkText = $(this).text();
 
             // replace the contents of the div with the link text
-            $('#content-container').html(linkText);
+            $('#content-container').html(descriptionData[linkText]);
 
             // cancel the default action of the link by returning false
             return false;
