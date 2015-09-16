@@ -6857,8 +6857,21 @@ Dinosaur was the most expensive film of 2000 and a box-office success.</p>
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
+
                 </div>
             </div> 
+
+
+
+<div class="row">
+        <div class="col-xs-12">
+
+<div id="my-calendar"></div>
+
+</div>
+
+    </div>
+
             
 
             
@@ -6878,8 +6891,51 @@ Dinosaur was the most expensive film of 2000 and a box-office success.</p>
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
 
+    <!-- Zabuto Calendar -->
+    <script src="assets/js/zabuto_calendar.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.min.css">
+
+
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
+
+
+
+var eventData = [{
+    "date": "2015-09-01",
+    "badge": false,
+    "url": "index.html"
+}, {
+    "date": "2015-09-02",
+    "badge": true,
+    "url": "show_action.html"
+}];
+var eventDataLength = eventData.length
+
+
+function myDateFunction(id) {
+    var date = $("#" + id).data("date");
+    var hasEvent = $("#" + id).data("hasEvent");
+    if (hasEvent == true) {
+        console.log(date)
+        var found = false;
+        var newUrl = "none"
+        for (var i = 0; i < eventDataLength; i++) {
+            console.log(eventData[i].date)
+            if (" " + date == " " + eventData[i].date) {
+                found = true;
+                newUrl = eventData[i].url
+                break;
+            }
+        }
+        if (found == true) {
+            alert(newUrl);
+            window.location.href = newUrl
+        }
+
+    }
+}
+
     $(document).ready(function() {
         
         $('#dataTables-0day').DataTable({
@@ -6907,6 +6963,12 @@ Dinosaur was the most expensive film of 2000 and a box-office success.</p>
                 "order": [[ 0, "asc" ]]
         });
         
+            $("#my-calendar").zabuto_calendar({
+        action: function() {
+            return myDateFunction(this.id, false);
+        },
+        data: eventData
+    });
 
     });
     </script>
